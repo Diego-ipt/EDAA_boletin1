@@ -1,0 +1,103 @@
+Información del ordenador:
+Fabricante: ASUSTeK COMPUTER INC.
+Modelo: VivoBook_ASUSLaptop X515UA_M515UA
+Factor de forma: Portátil
+Entrada táctil no detectada
+Información del procesador:
+Fabricante de la CPU: AuthenticAMD
+Marca de la CPU: AMD Ryzen 7 5700U with Radeon Graphics
+Familia de la CPU: 0x17
+Modelo de la CPU: 0x68
+Stepping de la CPU: 0x1
+Tipo de CPU: 0x0
+Velocidad: 1797 MHz
+16 procesadores lógicos
+8 procesadores físicos
+Hyper-threading: Compatible
+FCMOV: Compatible
+SSE2: Compatible
+SSE3: Compatible
+SSSE3: Compatible
+SSE4a: Compatible
+SSE41: Compatible
+SSE42: Compatible
+AES: Compatible
+AVX: Compatible
+AVX2: Compatible
+AVX512F: No compatible
+AVX512PF: No compatible
+AVX512ER: No compatible
+AVX512CD: No compatible
+AVX512VNNI: No compatible
+SHA: Compatible
+CMPXCHG16B: Compatible
+LAHF/SAHF: Compatible
+PrefetchW: No compatible
+BMI1: Compatible
+BMI2: Compatible
+F16C: Compatible
+FMA: Compatible
+Versión del sistema operativo:
+Windows 11 (64 bits)
+NTFS: Compatible
+Códigos criptográficos del proveedor: Compatible 311 0x0 0x0 0x0
+Información del cliente:
+Versión: 1738026274
+Estado de aceleración de la GPU del navegador: Activado
+Canvas del navegador: Activado
+Rasterización fuera de proceso del canvas del navegador: Activado
+Compositor de pantalla de renderizado directo del navegador: Desactivado
+Composición del navegador: Activado
+Hilos de rasterización múltiples del navegador: Activado
+OpenGL del navegador: Activado
+Rasterización del navegador: Activado
+RawDraw del navegador: Desactivado
+Skia Graphite del navegador: Desactivado
+Decodificación de vídeo del navegador: Activado
+Codificación de vídeo del navegador: Activado
+Vulkan del navegador: Desactivado
+WebGL del navegador: Activado
+WebGL2 del navegador: Activado
+WebGPU del navegador: Activado
+WebNN del navegador: Desactivado
+Tarjeta de vídeo:
+Controlador: AMD Radeon(TM) Graphics
+Nombre del controlador de DirectX: aticfx32.dll
+Versión del controlador: 30.0.13044.14002
+Versión del controlador de DirectX: 30.0.13044.14002
+Fecha del controlador: 13 del 5 de 2022
+Profundidad de color del escritorio: 32 bits por píxel
+Frecuencia de actualización del monitor: 60 Hz
+Tarjeta DirectX: AMD Radeon(TM) Graphics
+Identificador del fabricante: 0x1002
+Identificador del dispositivo: 0x164c
+Revisión: 0xc1
+Número de monitores: 1
+Número de tarjetas de vídeo lógicas: 1
+No se ha detectado ninguna interfaz SLI o Crossfire
+Resolución de pantalla principal: 1920 x 1080
+Resolución de escritorio: 1920 x 1080
+Tamaño de la pantalla principal: 13.54" x 7.60" (15.51" diag), 34.4cm x 19.3cm (39.4cm diag)
+No se ha detectado el tipo de bus principal
+Memoria VRAM principal: 512 MB
+Modos MSAA compatibles: 2x 4x 8x
+Tarjeta de sonido:
+Dispositivo de sonido: Altavoces (Realtek(R) Audio)
+Memoria:
+RAM: 23945 MB
+Hardware de RV:
+Visor de RV: No detectado
+Varios:
+Idioma de la IU: Español de España
+Tipo de soporte: Sin determinar
+Espacio total en disco disponible: 1109317 MB
+Bloque libre más grande en el disco: 599543 MB
+Fecha de instalación del SO: dic. 22 2024
+Mando de juego: None detectado
+Hash de la dirección MAC: 60eada0a28534f42e981adda0ece294c8e4276d7
+Almacenamiento:
+Hash del número de serie del disco: d424dd43
+Cantidad de SSD: 2
+Tamaño de los SSD: 1024G,512G
+Cantidad de HDD: 0
+Número de unidades extraíbles: 0

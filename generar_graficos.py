@@ -85,6 +85,105 @@ def crear_graficos():
     except Exception as e:
         print(f"   ✗ Error al procesar experimento 1: {e}")
     
+    # ========== EXPERIMENTO 2: EFECTO DE LA POSICIÓN ==========
+    print("\n2. Generando gráficos de efecto de la posición...")
+    
+    try:
+        bin_pos = pd.read_csv('resultados/exp2_pos_bin.csv')
+        seq_pos = pd.read_csv('resultados/exp2_pos_seq.csv')
+        gal_pos = pd.read_csv('resultados/exp2_pos_gal.csv')
+        
+        # Crear gráfico comparativo de posiciones
+        plt.figure(figsize=(14, 10))
+        
+        # Gráfico principal: Posición vs Tiempo (ESCALA LOGARÍTMICA)
+        plt.subplot(2, 2, 1)
+        
+        # Separar elementos encontrados y no encontrados
+        bin_found = bin_pos[bin_pos['PosicionReal'] != -1]
+        bin_not_found = bin_pos[bin_pos['PosicionReal'] == -1]
+        
+        seq_found = seq_pos[seq_pos['PosicionReal'] != -1]
+        seq_not_found = seq_pos[seq_pos['PosicionReal'] == -1]
+        
+        gal_found = gal_pos[gal_pos['PosicionReal'] != -1]
+        gal_not_found = gal_pos[gal_pos['PosicionReal'] == -1]
+        
+        # Plotear elementos encontrados con líneas en escala logarítmica
+        plt.semilogy(bin_found['PosicionReal'], bin_found['Tiempo'], 
+                    'o-', label='Binaria (Encontrados)', color='blue', linewidth=2, markersize=8)
+        plt.semilogy(seq_found['PosicionReal'], seq_found['Tiempo'], 
+                    's-', label='Secuencial (Encontrados)', color='red', linewidth=2, markersize=8)
+        plt.semilogy(gal_found['PosicionReal'], gal_found['Tiempo'], 
+                    '^-', label='Galloping (Encontrados)', color='green', linewidth=2, markersize=8)
+        
+        plt.xlabel('Posición Real en el Array')
+        plt.ylabel('Tiempo (nanosegundos, escala log)')
+        plt.title('Efecto de la Posición: Elementos Encontrados (Escala Logarítmica)')
+        plt.legend()
+        plt.grid(True, alpha=0.3)
+        
+        # Gráfico de elementos no encontrados (dividido en dos para claridad)
+        # Subplot para Binaria y Galloping
+        ax2 = plt.subplot(2, 2, 2)
+        x_pos_bg = [1, 2]
+        
+        ax2.scatter([1]*len(bin_not_found), bin_not_found['Tiempo'], 
+                   s=100, label='Binaria', color='blue', alpha=0.7, marker='o')
+        ax2.scatter([2]*len(gal_not_found), gal_not_found['Tiempo'], 
+                   s=100, label='Galloping', color='green', alpha=0.7, marker='^')
+        
+        ax2.set_xlabel('Algoritmo')
+        ax2.set_ylabel('Tiempo (nanosegundos)')
+        ax2.set_title('No Encontrados: Binaria vs Galloping')
+        ax2.set_xticks(x_pos_bg)
+        ax2.set_xticklabels(['Binaria', 'Galloping'])
+        ax2.legend()
+        ax2.grid(True, alpha=0.3)
+
+        # Subplot para Secuencial
+        ax3 = plt.subplot(2, 2, 3)
+        ax3.scatter([1]*len(seq_not_found), seq_not_found['Tiempo'], 
+                   s=100, label='Secuencial', color='red', alpha=0.7, marker='s')
+        
+        ax3.set_xlabel('Algoritmo')
+        ax3.set_ylabel('Tiempo (nanosegundos)')
+        ax3.set_title('No Encontrados: Secuencial')
+        ax3.set_xticks([1])
+        ax3.set_xticklabels(['Secuencial'])
+        ax3.legend()
+        ax3.grid(True, alpha=0.3)
+        
+        # Formatear el eje Y para que sea más legible (notación científica)
+        ax3.ticklabel_format(style='sci', axis='y', scilimits=(0,0))
+        
+        # Tabla resumen (SOLO TIEMPO MIN Y MAX)
+        plt.subplot(2, 2, 4)
+        plt.axis('off')
+        
+        # Crear tabla con estadísticas simplificadas
+        estadisticas = [
+            ['Algoritmo', 'Tiempo Min (ns)', 'Tiempo Max (ns)'],
+            ['Binaria', f"{bin_pos['Tiempo'].min()}", f"{bin_pos['Tiempo'].max()}"],
+            ['Secuencial', f"{seq_pos['Tiempo'].min()}", f"{seq_pos['Tiempo'].max()}"],
+            ['Galloping', f"{gal_pos['Tiempo'].min()}", f"{gal_pos['Tiempo'].max()}"]
+        ]
+        
+        table = plt.table(cellText=estadisticas[1:], colLabels=estadisticas[0],
+                         cellLoc='center', loc='center', bbox=[0, 0, 1, 1])
+        table.auto_set_font_size(False)
+        table.set_fontsize(12)
+        table.scale(1, 2.5)
+        plt.title('Estadísticas Comparativas (Min-Max)')
+        
+        plt.tight_layout()
+        plt.savefig('graficos/exp2_comparacion_posiciones.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        
+        print("   ✓ Gráfico de posiciones guardado: graficos/exp2_comparacion_posiciones.png")
+        
+    except Exception as e:
+        print(f"   ✗ Error al procesar experimento 2: {e}")
     
     # ========== GRÁFICOS INDIVIDUALES ==========
     print("\n3. Generando gráficos individuales...")
